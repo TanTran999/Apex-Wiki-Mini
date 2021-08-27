@@ -1,3 +1,4 @@
+import 'package:apex_wiki_mini/route_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:apex_wiki_mini/screens/theme/const.dart';
 import 'package:apex_wiki_mini/screens/widgets/export.dart';
@@ -25,7 +26,10 @@ class WelcomeScreen extends StatelessWidget {
                   Flexible(
                     child: Hero(
                       tag: "logo",
-                      child: Logo(height: 150,)),
+                      child: Logo(
+                        height: 150,
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: 5,
@@ -45,9 +49,23 @@ class WelcomeScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  PrimaryButton(size: size, label: "Log in", onPress: (){Navigator.pushNamed(context, '/login');},),
-                  SizedBox(height: 45,),
-                  PrimaryButton(size: size, label: "Sign up", onPress: (){Navigator.pushNamed(context, '/register');},),
+                  PrimaryButton(
+                    size: size,
+                    label: "Log in",
+                    onPress: () {
+                      Navigator.push(context, CustomPageRoute(name: "/login"));
+                    },
+                  ),
+                  SizedBox(
+                    height: 45,
+                  ),
+                  PrimaryButton(
+                    size: size,
+                    label: "Sign up",
+                    onPress: () {
+                      Navigator.push(context, CustomPageRoute(name: "/register"));
+                    },
+                  ),
                 ],
               ),
             ),
@@ -57,4 +75,3 @@ class WelcomeScreen extends StatelessWidget {
     );
   }
 }
-
