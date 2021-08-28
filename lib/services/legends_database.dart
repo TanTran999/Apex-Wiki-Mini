@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:apex_wiki_mini/model/legends_data.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+class legendDatabase {
+
+  //WidgetsFlutterBinding.ensureInitialized();
 
   final database = openDatabase(
     // Set the path to the database. Note: Using the `join` function from the
@@ -86,15 +88,14 @@ void main() async {
     await db.execute('DELETE FROM $tableName');
   }
 
-  // for (Legend legend in listLegend){
-  //   await addLegend(legend);
-  // }
-
-  //await cleanTable('legends');
-
-  await legends().then((list) {
-    for (Legend legend in list) {
-      print(legend);
-    }
+  Future.forEach(listLegend, (Legend legend) async {
+    await addLegend(legend);
   });
+
+
+  // await legends().then((list) {
+  //   for (Legend legend in list) {
+  //     print(legend);
+  //   }
+  // });
 }
