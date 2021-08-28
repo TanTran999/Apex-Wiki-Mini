@@ -3,8 +3,10 @@ import 'package:apex_wiki_mini/screens/login_screen.dart';
 import 'package:apex_wiki_mini/screens/register_screen.dart';
 import 'package:apex_wiki_mini/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:apex_wiki_mini/services/legends_database.dart';
 
-void main() {
+void main() async {
+  createDatabase();
   runApp(MyApp());
 }
 

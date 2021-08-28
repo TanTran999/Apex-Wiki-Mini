@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:apex_wiki_mini/model/legends_data.dart';
 
-void main() async {
+void createDatabase() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   final database = openDatabase(
@@ -92,9 +93,15 @@ void main() async {
 
   //await cleanTable('legends');
 
-  await legends().then((list) {
-    for (Legend legend in list) {
-      print(legend);
-    }
-  });
+  for(int i = 0; i< listLegend.length; i++){
+    await addLegend(listLegend[i]);
+  }
+
+  // await legends().then((list) {
+  //   for (Legend legend in list) {
+  //     print(legend);
+  //   }
+  // });
+
+  print(await legends());
 }
