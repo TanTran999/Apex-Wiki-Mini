@@ -1,4 +1,5 @@
 import 'package:apex_wiki_mini/screens/info_screen.dart';
+import 'package:apex_wiki_mini/screens/list_legend_screen.dart';
 import 'package:apex_wiki_mini/screens/login_screen.dart';
 import 'package:apex_wiki_mini/screens/register_screen.dart';
 import 'package:apex_wiki_mini/screens/welcome_screen.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         "/login": (context) => LoginScreen(),
         "/register": (context) => RegisterScreen(),
         "/info": (context) => InfoScreen(),
+        "/listLegend": (context) => ListLegendScreen(),
       },
     );
   }
