@@ -31,29 +31,12 @@ class ListLegendScreen extends StatelessWidget {
                     return Container(
                       margin: EdgeInsets.only(top: 10, bottom: 10),
                       height: 100,
-                      child: GestureDetector(
-                        onTap: (){
-                           Navigator.push(context, CustomPageRoute(name: "/detail"));
+                      child: LegendCard(
+                        onPress: (){
+                          Navigator.push(context, CustomPageRoute(name: "/detail"));
                         },
-                        child: Row(
-                          children: [
-                            Container(
-                              height: 100,
-                              width: 100,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                  image: AssetImage("assets/images/shion.png"),
-                                  fit: BoxFit.fill,
-                                  ),
-                              ),
-                            ),
-                            SizedBox(width: 5,),
-                            Flexible(child: Center(
-                              child: Text("Murasaki Shion", style: titleStyle,),
-                            ),),
-                          ],
-                        ),
+                        path: "assets/images/shion.png",
+                        name: "Murasaki Shion",
                       ),
                     );
                   },

@@ -22,65 +22,44 @@ class DetailLegend extends StatelessWidget {
                   width: 40,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(image: AssetImage("assets/images/shion.png"), fit: BoxFit.cover),
+                    image: DecorationImage(
+                        image: AssetImage("assets/images/shion.png"),
+                        fit: BoxFit.cover),
                   ),
                 ),
-                Header(isBack: true,),
+                Header(
+                  isBack: true,
+                ),
               ],
             ),
-            SizedBox(height: 10,),
-            Flexible(child: Column(
-              children: [
-                Center(child: Text("Murasaki Shion", style: titleStyle,),),
-                Flexible(
-                  child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Flexible(
-                      flex: 1,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("Real name", style: labelStyle,),
-                          SizedBox(height: 16,),
-                          Text("Gender", style: labelStyle,),
-                          SizedBox(height: 16,),
-                          Text("Age", style: labelStyle,),
-                          SizedBox(height: 16,),
-                          Text("Height", style: labelStyle,),
-                          SizedBox(height: 16,),
-                          Text("Home World", style: labelStyle,),
-                        ],
-                      ),
+            SizedBox(
+              height: 10,
+            ),
+            Flexible(
+              child: Column(
+                children: [
+                  Center(
+                    child: Text(
+                      "Murasaki Shion",
+                      style: titleStyle,
                     ),
-                    SizedBox(width: 12,),
-                    Flexible(
-                      flex: 1,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("Murasaki Shion", style: detailStyle,),
-                          SizedBox(height: 16,),
-                          Text("Female", style: detailStyle,),
-                          SizedBox(height: 16,),
-                          Text("Unknow", style: detailStyle,),
-                          SizedBox(height: 16,),
-                          Text("145 cm", style: detailStyle,),
-                          SizedBox(height: 16,),
-                          Text("Hololive World", style: detailStyle,),
-                        ],
-                      ),
+                  ),
+                  Flexible(
+                    child: LegendDetails(
+                      realName: "Murasaki Shion",
+                      age: "unknow",
+                      height: "143 cm",
+                      homeWorld: "Hololive World",
+                      gender: "Female",
                     ),
-                  ],
-                ),),
-              ],
-            ),),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
+
