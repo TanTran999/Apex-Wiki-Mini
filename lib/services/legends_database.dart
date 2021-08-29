@@ -1,21 +1,17 @@
 import 'dart:async';
 import 'package:apex_wiki_mini/model/legends.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:apex_wiki_mini/model/legends_data.dart';
 
-<<<<<<< HEAD
-void createDatabase() async {
-  WidgetsFlutterBinding.ensureInitialized();
-=======
-class legendDatabase {
+class LegendDatabase {
+  var database;
+  LegendDatabase(){
+    createDatabase();
+  }
 
-  //WidgetsFlutterBinding.ensureInitialized();
->>>>>>> master
-
-  final database = openDatabase(
+  void createDatabase() async {
+    database = openDatabase(
     // Set the path to the database. Note: Using the `join` function from the
     // `path` package is best practice to ensure the path is correctly
     // constructed for each platform.
@@ -27,6 +23,8 @@ class legendDatabase {
     },
     version: 1,
   );
+  }
+  
 
   Future<void> addLegend(Legend legend) async {
     final db = await database;
@@ -93,28 +91,20 @@ class legendDatabase {
     await db.execute('DELETE FROM $tableName');
   }
 
-  Future.forEach(listLegend, (Legend legend) async {
-    await addLegend(legend);
-  });
+  // Future.forEach(listLegend, (Legend legend) async {
+  //   await addLegend(legend);
+  // });
 
 
-<<<<<<< HEAD
-  for(int i = 0; i< listLegend.length; i++){
-    await addLegend(listLegend[i]);
-  }
+  // for(int i = 0; i< listLegend.length; i++){
+  //   await addLegend(listLegend[i]);
+  // }
 
-  await legends().then((list) {
-    for (Legend legend in list) {
-      print(legend);
-    }
-  });
-
-  //print(await legends());
-=======
   // await legends().then((list) {
   //   for (Legend legend in list) {
   //     print(legend);
   //   }
   // });
->>>>>>> master
+
+  //print(await legends());
 }

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:apex_wiki_mini/services/legends_database.dart';
 
 void main() async {
-  createDatabase();
+  //createDatabase();
   runApp(MyApp());
 }
 
