@@ -97,11 +97,11 @@ void createDatabase() async {
     await addLegend(listLegend[i]);
   }
 
-  // await legends().then((list) {
-  //   for (Legend legend in list) {
-  //     print(legend);
-  //   }
-  // });
+  await legends().then((list) {
+    for (Legend legend in list) {
+      print(legend);
+    }
+  });
 
-  print(await legends());
+  //print(await legends());
 }
