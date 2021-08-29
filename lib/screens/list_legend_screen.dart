@@ -6,7 +6,7 @@ import 'package:apex_wiki_mini/screens/widgets/export.dart';
 class ListLegendScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    //Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: primaryColor,
       body: Container(
@@ -14,59 +14,33 @@ class ListLegendScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Header(),
-            Flexible(
-              child: Column(
-                children: [
-                  Flexible(
-                    child: SizedBox(
-                      height: size.height,
-                    ),
-                  ),
-                  Flexible(
-                    child: Hero(
-                      tag: "logo",
-                      child: Logo(
-                        height: 150,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    "APEX WIKI",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 32,
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
-                ],
-              ),
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Logo(height: 40,),
+                Header(isBack: true,),
+              ],
             ),
+            SizedBox(height: 30,),
             Flexible(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  PrimaryButton(
-                    size: size,
-                    label: "Log in",
-                    onPress: () {
-                      Navigator.push(context, CustomPageRoute(name: "/login"));
-                    },
-                  ),
-                  SizedBox(
-                    height: 45,
-                  ),
-                  PrimaryButton(
-                    size: size,
-                    label: "Sign up",
-                    onPress: () {
-                      Navigator.push(context, CustomPageRoute(name: "/register"));
-                    },
-                  ),
-                ],
+              child: ScrollConfiguration(
+                behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+                child: ListView.builder(
+                  itemCount: 18,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: EdgeInsets.only(top: 10, bottom: 10),
+                      height: 100,
+                      child: LegendCard(
+                        onPress: (){
+                          Navigator.push(context, CustomPageRoute(name: "/detail"));
+                        },
+                        path: "assets/images/shion.png",
+                        name: "Murasaki Shion",
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
           ],

@@ -1,3 +1,5 @@
+import 'package:apex_wiki_mini/screens/detail_legend.dart';
+import 'package:apex_wiki_mini/screens/list_legend_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:apex_wiki_mini/screens/theme/const.dart';
 import 'package:apex_wiki_mini/screens/info_screen.dart';
@@ -13,6 +15,8 @@ class CustomPageRoute extends PageRoute {
     "/login": LoginScreen(),
     "/register" : RegisterScreen(),
     "/info" : InfoScreen(),
+    "/list": ListLegendScreen(),
+    "/detail": DetailLegend(),
   };
 
   final String name; 

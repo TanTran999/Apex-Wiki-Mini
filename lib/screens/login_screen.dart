@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:apex_wiki_mini/screens/theme/const.dart';
 import 'package:apex_wiki_mini/screens/widgets/export.dart';
+import 'package:apex_wiki_mini/route_animation.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -79,9 +80,14 @@ class LoginScreen extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                PrimaryButton(
-                  size: size,
-                  label: "Log in",
+                GestureDetector(
+                  onTap: (){
+                     Navigator.push(context, CustomPageRoute(name: "/list"));
+                  },
+                  child: PrimaryButton(
+                    size: size,
+                    label: "Log in",
+                  ),
                 ),
               ],
             ),
