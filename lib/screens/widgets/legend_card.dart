@@ -6,7 +6,7 @@ class LegendCard extends StatelessWidget {
   final String path;
   final String name;
 
-  LegendCard({this.onPress, this.path ="", this.name = ""});
+  LegendCard({this.onPress, this.path = "", this.name = ""});
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +24,20 @@ class LegendCard extends StatelessWidget {
                 image: DecorationImage(
                   image: AssetImage(path),
                   fit: BoxFit.fill,
-                  ),
+                ),
               ),
             ),
-            SizedBox(width: 5,),
-            Flexible(child: Center(
-              child: Text(name, style: titleStyle,),
-            ),),
+            SizedBox(
+              width: 5,
+            ),
+            Flexible(
+              child: Center(
+                child: Text(
+                  name,
+                  style: titleStyle,
+                ),
+              ),
+            ),
           ],
         ),
       ),

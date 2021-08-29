@@ -10,17 +10,19 @@ import 'package:apex_wiki_mini/screens/register_screen.dart';
 
 class CustomPageRoute extends PageRoute {
 
+
   Map<String, Widget> map = {
     "/" : WelcomeScreen(),
     "/login": LoginScreen(),
     "/register" : RegisterScreen(),
     "/info" : InfoScreen(),
     "/list": ListLegendScreen(),
-    "/detail": DetailLegend(),
+    //"/detail": DetailLegend(),
   };
 
+
   final String name; 
-  CustomPageRoute({required this.name});
+  CustomPageRoute({required this.name,});
 
   @override
   Color get barrierColor => primaryColor;

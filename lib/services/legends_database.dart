@@ -6,25 +6,21 @@ import 'package:apex_wiki_mini/model/legends_data.dart';
 
 class LegendDatabase {
   var database;
-  LegendDatabase(){
-    createDatabase();
-  }
 
-  void createDatabase() async {
+  Future<void> createDatabase() async {
     database = openDatabase(
-    // Set the path to the database. Note: Using the `join` function from the
-    // `path` package is best practice to ensure the path is correctly
-    // constructed for each platform.
-    join(await getDatabasesPath(), 'legend_database.db'),
-    onCreate: (db, version) {
-      return db.execute(
-          "CREATE TABLE legends(id INTEGER PRIMARY KEY, Legend_Name TEXT, Real_Name TEXT, Gender TEXT, "
-          "Age INTEGER, Height INTEGER, Home TEXT, Image TEXT)");
-    },
-    version: 1,
-  );
+      // Set the path to the database. Note: Using the `join` function from the
+      // `path` package is best practice to ensure the path is correctly
+      // constructed for each platform.
+      join(await getDatabasesPath(), 'legend_database.db'),
+      onCreate: (db, version) {
+        return db.execute(
+            "CREATE TABLE legends(id INTEGER PRIMARY KEY, Legend_Name TEXT, Real_Name TEXT, Gender TEXT, "
+            "Age INTEGER, Height INTEGER, Home TEXT, Image TEXT)");
+      },
+      version: 1,
+    );
   }
-  
 
   Future<void> addLegend(Legend legend) async {
     final db = await database;
@@ -94,7 +90,6 @@ class LegendDatabase {
   // Future.forEach(listLegend, (Legend legend) async {
   //   await addLegend(legend);
   // });
-
 
   // for(int i = 0; i< listLegend.length; i++){
   //   await addLegend(listLegend[i]);
