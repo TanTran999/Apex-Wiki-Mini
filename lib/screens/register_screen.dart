@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:apex_wiki_mini/screens/theme/const.dart';
 import 'package:apex_wiki_mini/screens/widgets/export.dart';
+import 'package:apex_wiki_mini/route_animation.dart';
 
 class RegisterScreen extends StatelessWidget {
   @override
@@ -92,9 +93,14 @@ class RegisterScreen extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                PrimaryButton(
-                  size: size,
-                  label: "Sign up",
+                GestureDetector(
+                  onTap: (){
+                     Navigator.push(context, CustomPageRoute(name: "/login"));
+                  },
+                  child: PrimaryButton(
+                    size: size,
+                    label: "Sign up",
+                  ),
                 ),
               ],
             ),
