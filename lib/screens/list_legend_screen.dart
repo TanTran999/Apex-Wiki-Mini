@@ -1,7 +1,6 @@
 import 'package:apex_wiki_mini/Provider/legend_provider.dart';
 import 'package:apex_wiki_mini/route_animation.dart';
 import 'package:apex_wiki_mini/screens/detail_legend.dart';
-import 'package:apex_wiki_mini/screens/info_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:apex_wiki_mini/screens/theme/const.dart';
 import 'package:apex_wiki_mini/screens/widgets/export.dart';
@@ -9,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:apex_wiki_mini/model/legends.dart';
 
 class ListLegendScreen extends StatelessWidget {
+  static const routeName = "/list";
   @override
   Widget build(BuildContext context) {
     //Size size = MediaQuery.of(context).size;
@@ -49,15 +49,11 @@ class ListLegendScreen extends StatelessWidget {
                                 height: 100,
                                 child: LegendCard(
                                   onPress: () {
-                                    // Navigator.push(context, CustomPageRoute(name: "/detail"));
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => DetailLegend(id: index)),
-                                    );
+                                    context.read(getSpecifiedLegend.notifier).getLegend_byID(index);
+                                    Navigator.push(context, CustomPageRoute(name: DetailLegend.routeName));
                                   },
                                   path: "assets/images/shion.png",
-                                  name: value[index].legendName ?? "none",
+                                  name: value[index].legendName ?? "Unknown",
                                 ),
                               );
                             },

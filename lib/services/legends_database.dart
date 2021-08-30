@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:apex_wiki_mini/model/legends.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:apex_wiki_mini/model/legends_data.dart';
 
 class LegendDatabase {
   var database;
@@ -49,6 +48,24 @@ class LegendDatabase {
               home: maps[i]['Home'],
               path: maps[i]['Image'],
             ));
+  }
+
+  Future<Legend> getLegendById(int id) async {
+    final db = await database;
+
+    final List<Map<String, dynamic>> maps =
+        await db.query("legends", where: "id = ?", whereArgs: [id]);
+    int i = 0;
+    return Legend(
+      id: maps[i]['id'],
+      legendName: maps[i]['Legend_Name'],
+      realName: maps[i]['Real_Name'],
+      gender: maps[i]['Gender'],
+      age: maps[i]['Age'],
+      height: maps[i]['Height'],
+      home: maps[i]['Home'],
+      path: maps[i]['Image'],
+    );
   }
 
   Future<void> updateLegend(Legend legend) async {

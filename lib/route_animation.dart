@@ -17,12 +17,13 @@ class CustomPageRoute extends PageRoute {
     "/register" : RegisterScreen(),
     "/info" : InfoScreen(),
     "/list": ListLegendScreen(),
-    //"/detail": DetailLegend(),
+    "/detail": DetailLegend(),
   };
 
 
   final String name; 
   CustomPageRoute({required this.name,});
+
 
   @override
   Color get barrierColor => primaryColor;

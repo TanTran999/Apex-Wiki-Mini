@@ -3,6 +3,16 @@ const String queryCreate_Legends =
     "Age INTEGER, Height INTEGER, Home TEXT, Image TEXT)";
 
 class Legend {
+  // static const Legend shion = Legend(
+  //     id: 0,
+  //     legendName: 'kusogakick',
+  //     realName: 'shion',
+  //     gender: 'female',
+  //     age: 18,
+  //     height: 148,
+  //     home: 'hololive',
+  //     path: 'assets/images/shion.png',
+  // );
   Legend(
       {required this.id,
       required this.legendName,
@@ -34,8 +44,8 @@ class Legend {
     };
   }
 
-  @override
-  String toString() {
-    return 'legend{id: $id, name = $legendName, realname = ${realName != null ? realName : 'Unknown'}, age = ${age != null ? age : 'Unknown'}}';
-  }
+  // @override
+  // String toString() {
+  //   return 'legend{id: $id, name = $legendName, realname = ${realName != null ? realName : 'Unknown'}, age = ${age != null ? age : 'Unknown'}}';
+  // }
 }

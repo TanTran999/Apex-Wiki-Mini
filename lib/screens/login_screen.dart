@@ -1,9 +1,11 @@
+import 'package:apex_wiki_mini/screens/list_legend_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:apex_wiki_mini/screens/theme/const.dart';
 import 'package:apex_wiki_mini/screens/widgets/export.dart';
 import 'package:apex_wiki_mini/route_animation.dart';
 
 class LoginScreen extends StatelessWidget {
+  static const routeName = "/login";
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -82,7 +84,7 @@ class LoginScreen extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: (){
-                     Navigator.push(context, CustomPageRoute(name: "/list"));
+                     Navigator.push(context, CustomPageRoute(name: ListLegendScreen.routeName));
                   },
                   child: PrimaryButton(
                     size: size,

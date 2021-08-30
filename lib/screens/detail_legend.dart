@@ -7,8 +7,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:apex_wiki_mini/model/legends.dart';
 
 class DetailLegend extends StatelessWidget {
-  DetailLegend({required this.id});
-  final int id;
+  static const routeName = "/detail";
+  //DetailLegend({required this.id});
+  //final int id;
   @override
   Widget build(BuildContext context) {
     //Size size = MediaQuery.of(context).size;
@@ -43,23 +44,23 @@ class DetailLegend extends StatelessWidget {
             Flexible(
               child: Consumer(
                 builder: (context, watch, _){
-                  return watch(legendProvider).when(
-                      data: (List<Legend> legends){
+                  return watch(getSpecifiedLegend).when(
+                      data: (Legend legend){
                         return Column(
                           children: [
                             Center(
                               child: Text(
-                                legends[id].legendName??"Unknown",
+                                legend.legendName??"Unknown",
                                 style: titleStyle,
                               ),
                             ),
                             Flexible(
                               child: LegendDetails(
-                                realName: legends[id].realName??"Unknown",
-                                age: legends[id].age!=null?legends[id].age.toString():"Unknown",
-                                height: legends[id].height!=null?legends[id].height.toString():"Unknown",
-                                homeWorld: legends[id].home??"Unknown",
-                                gender: legends[id].gender??"Unknown",
+                                realName: legend.realName??"Unknown",
+                                age: legend.age!=null?legend.age.toString():"Unknown",
+                                height: legend.height!=null?legend.height.toString():"Unknown",
+                                homeWorld: legend.home??"Unknown",
+                                gender: legend.gender??"Unknown",
                               ),
                             ),
                           ],
@@ -68,7 +69,7 @@ class DetailLegend extends StatelessWidget {
                         return CircularProgressIndicator();
                   },
                       error: (error, stackTrace){
-                        return Text("error");
+                        return Text("unable to get data");
                       },);
                 },
               )
