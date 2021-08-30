@@ -3,7 +3,7 @@ import 'package:apex_wiki_mini/screens/theme/const.dart';
 import 'package:apex_wiki_mini/screens/widgets/export.dart';
 
 class InfoScreen extends StatelessWidget {
-
+  static const routeName = "/info";
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

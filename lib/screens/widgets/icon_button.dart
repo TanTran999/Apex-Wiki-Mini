@@ -1,6 +1,8 @@
+import 'package:apex_wiki_mini/screens/info_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:apex_wiki_mini/screens/theme/const.dart';
 import 'package:apex_wiki_mini/route_animation.dart';
+
 
 class IconButtons extends StatelessWidget {
   final IconData icon;
@@ -17,7 +19,7 @@ class IconButtons extends StatelessWidget {
           Navigator.pop(context);
         }
         if(isInfo){
-          Navigator.push(context, CustomPageRoute(name: "/info"));
+          Navigator.push(context, CustomPageRoute(name: InfoScreen.routeName));
         }
       },
       child: Container(
