@@ -12,7 +12,7 @@ class DetailLegend extends StatelessWidget {
   //final int id;
   @override
   Widget build(BuildContext context) {
-    //Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: primaryColor,
       body: Container(

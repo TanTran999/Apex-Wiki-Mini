@@ -17,94 +17,149 @@ class LegendDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    //Size size = MediaQuery.of(context).size;
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Flexible(
-          flex: 1,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Real name",
-                style: labelStyle,
+        Row(
+          children: [
+            Flexible(
+              flex: 1,
+              child: Container(
+                height: 60,
+                 padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                alignment: Alignment.centerRight,
+                child: Text(
+                  "Real name",
+                  style: labelStyle,
+                ),
               ),
-              SizedBox(
-                height: 16,
+            ),
+            Flexible(
+              flex: 2,
+              child: Container(
+                padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                height: 60,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  realName,
+                  style: detailStyle,
+                ),
               ),
-              Text(
-                "Gender",
-                style: labelStyle,
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              Text(
-                "Age",
-                style: labelStyle,
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              Text(
-                "Height",
-                style: labelStyle,
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              Text(
-                "Home World",
-                style: labelStyle,
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
-        SizedBox(
-          width: 12,
+        Row(
+          children: [
+            Flexible(
+              flex: 1,
+              child: Container(
+                height: 60,
+                 padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                alignment: Alignment.centerRight,
+                child: Text(
+                  "Gender",
+                  style: labelStyle,
+                ),
+              ),
+            ),
+            Flexible(
+              flex: 2,
+              child: Container(
+                padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                height: 60,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  gender,
+                  style: detailStyle,
+                ),
+              ),
+            ),
+          ],
         ),
-        Flexible(
-          flex: 1,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                realName,
-                style: detailStyle,
+        Row(
+          children: [
+            Flexible(
+              flex: 1,
+              child: Container(
+                height: 60,
+                 padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                alignment: Alignment.centerRight,
+                child: Text(
+                  "Age",
+                  style: labelStyle,
+                ),
               ),
-              SizedBox(
-                height: 16,
+            ),
+            Flexible(
+              flex: 2,
+              child: Container(
+                padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                height: 60,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  age,
+                  style: detailStyle,
+                ),
               ),
-              Text(
-                gender,
-                style: detailStyle,
+            ),
+          ],
+        ),
+        Row(
+          children: [
+            Flexible(
+              flex: 1,
+              child: Container(
+                height: 60,
+                 padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                alignment: Alignment.centerRight,
+                child: Text(
+                  "Height",
+                  style: labelStyle,
+                ),
               ),
-              SizedBox(
-                height: 16,
+            ),
+            Flexible(
+              flex: 2,
+              child: Container(
+                padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                height: 60,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  height,
+                  style: detailStyle,
+                ),
               ),
-              Text(
-                age,
-                style: detailStyle,
+            ),
+          ],
+        ),
+        Row(
+          children: [
+            Flexible(
+              flex: 1,
+              child: Container(
+                height: 60,
+                 padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                alignment: Alignment.centerRight,
+                child: Text(
+                  "Home World",
+                  style: labelStyle,
+                ),
               ),
-              SizedBox(
-                height: 16,
+            ),
+            Flexible(
+              flex: 2,
+              child: Container(
+                padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                height: 60,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  homeWorld,
+                  style: detailStyle,
+                ),
               ),
-              Text(
-                height,
-                style: detailStyle,
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              Text(
-                homeWorld,
-                style: detailStyle,
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ],
     );
