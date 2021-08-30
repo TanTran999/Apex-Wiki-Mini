@@ -40,3 +40,4 @@ class AsyncLegend extends StateNotifier<AsyncValue<Legend>>{
     state = AsyncData(legend);
   }
 }
+

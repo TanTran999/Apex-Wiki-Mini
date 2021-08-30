@@ -44,8 +44,8 @@ class Legend {
     };
   }
 
-  // @override
-  // String toString() {
-  //   return 'legend{id: $id, name = $legendName, realname = ${realName != null ? realName : 'Unknown'}, age = ${age != null ? age : 'Unknown'}}';
-  // }
+  @override
+  String toString() {
+    return 'legend{id: $id, name = $legendName, realname = ${realName != null ? realName : 'Unknown'}, age = ${age != null ? age : 'Unknown'}}';
+  }
 }
