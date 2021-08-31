@@ -40,9 +40,9 @@ class ListLegendScreen extends StatelessWidget {
                   child: Consumer(
                     builder: (context, watch, _) {
                       return watch(legendProvider).when(
-                        data: (List<Legend> value) {
+                        data: (List<Legend> legends) {
                           return ListView.builder(
-                            itemCount: value.length,
+                            itemCount: legends.length,
                             itemBuilder: (context, index) {
                               return Container(
                                 margin: EdgeInsets.only(top: 10, bottom: 10),
@@ -52,8 +52,8 @@ class ListLegendScreen extends StatelessWidget {
                                     context.read(getSpecifiedLegend.notifier).getLegend_byID(index);
                                     Navigator.push(context, CustomPageRoute(name: DetailLegend.routeName));
                                   },
-                                  path: "assets/images/shion.png",
-                                  name: value[index].legendName ?? "Unknown",
+                                  path: '${legends[index].path}',
+                                  name: legends[index].legendName ?? "Unknown",
                                 ),
                               );
                             },

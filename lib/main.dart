@@ -6,13 +6,19 @@ import 'package:apex_wiki_mini/screens/welcome_screen.dart';
 import 'package:apex_wiki_mini/services/legends_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
+import 'package:apex_wiki_mini/model/legends_data.dart';
+import 'package:apex_wiki_mini/model/legends.dart';
 
 void main() async{
-  //WidgetsFlutterBinding.ensureInitialized();
+  // WidgetsFlutterBinding.ensureInitialized();
   // LegendDatabase data = LegendDatabase();
   // await data.init();
   // await data.cleanTable('legends');
+  // await data.legends().then((list) {
+  //   for (Legend legend in list) {
+  //     print(legend);
+  //   }
+  // });
   runApp(ProviderScope(child: MyApp()));
 }
 
