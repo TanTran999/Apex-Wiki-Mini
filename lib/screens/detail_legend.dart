@@ -23,15 +23,26 @@ class DetailLegend extends StatelessWidget {
             Stack(
               alignment: Alignment.center,
               children: [
-                Container(
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                        image: AssetImage("assets/images/shion.png"),
-                        fit: BoxFit.cover),
-                  ),
+                Consumer(
+                  builder: (context, watch, _) {
+                    return watch(getSpecifiedLegend).when(
+                        data: (Legend legend) {
+                      return Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+                              image: AssetImage('${legend.path}'),
+                              fit: BoxFit.cover),
+                        ),
+                      );
+                    }, loading: () {
+                      return CircularProgressIndicator();
+                    }, error: (error, stackTrace) {
+                      return Text("unable to get data");
+                    });
+                  },
                 ),
                 Header(
                   isBack: true,
@@ -41,39 +52,43 @@ class DetailLegend extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Flexible(
-              child: Consumer(
-                builder: (context, watch, _){
-                  return watch(getSpecifiedLegend).when(
-                      data: (Legend legend){
-                        return Column(
-                          children: [
-                            Center(
-                              child: Text(
-                                legend.legendName??"Unknown",
-                                style: titleStyle,
-                              ),
-                            ),
-                            Flexible(
-                              child: LegendDetails(
-                                realName: legend.realName??"Unknown",
-                                age: legend.age!=null?legend.age.toString():"Unknown",
-                                height: legend.height!=null?legend.height.toString():"Unknown",
-                                homeWorld: legend.home??"Unknown",
-                                gender: legend.gender??"Unknown",
-                              ),
-                            ),
-                          ],
-                        );
-                      }, loading: (){
-                        return CircularProgressIndicator();
+            Flexible(child: Consumer(
+              builder: (context, watch, _) {
+                return watch(getSpecifiedLegend).when(
+                  data: (Legend legend) {
+                    return Column(
+                      children: [
+                        Center(
+                          child: Text(
+                            legend.legendName ?? "Unknown",
+                            style: titleStyle,
+                          ),
+                        ),
+                        Flexible(
+                          child: LegendDetails(
+                            realName: legend.realName ?? "Unknown",
+                            age: legend.age != null
+                                ? legend.age.toString()
+                                : "Unknown",
+                            height: legend.height != null
+                                ? legend.height.toString()
+                                : "Unknown",
+                            homeWorld: legend.home ?? "Unknown",
+                            gender: legend.gender ?? "Unknown",
+                          ),
+                        ),
+                      ],
+                    );
                   },
-                      error: (error, stackTrace){
-                        return Text("unable to get data");
-                      },);
-                },
-              )
-            ),
+                  loading: () {
+                    return CircularProgressIndicator();
+                  },
+                  error: (error, stackTrace) {
+                    return Text("unable to get data");
+                  },
+                );
+              },
+            )),
           ],
         ),
       ),

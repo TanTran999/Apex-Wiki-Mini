@@ -1,11 +1,23 @@
-import 'dart:async';
 import 'package:apex_wiki_mini/model/legends.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:apex_wiki_mini/model/legends_data.dart';
 
 class LegendDatabase {
   var database;
 
+  Future<void> init() async{
+
+    if(database==null){
+      await createDatabase();
+    }
+    if (!await checkData('legends')) {
+      Future.forEach(listLegend, (Legend legend) async {
+        await addLegend(legend);
+      });
+    }
+
+  }
   Future<void> createDatabase() async {
     database = openDatabase(
       // Set the path to the database. Note: Using the `join` function from the
@@ -20,7 +32,6 @@ class LegendDatabase {
       version: 1,
     );
   }
-
   Future<void> addLegend(Legend legend) async {
     final db = await database;
 
@@ -102,6 +113,25 @@ class LegendDatabase {
   Future<void> cleanTable(String tableName) async {
     final db = await database;
     await db.execute('DELETE FROM $tableName');
+  }
+
+  Future<bool> checkData(String tableName) async{
+    final db = await database;
+    int count;
+    try{
+      var res = await db.rawQuery('SELECT COUNT(*) FROM $tableName');
+      count = res.first['COUNT(*)'];
+    }catch(e){
+      throw('Cant retrieved the data');
+    }
+
+    if(count > 0){
+      return true;
+    }
+    else{
+      return false;
+    }
+
   }
 
   // Future.forEach(listLegend, (Legend legend) async {

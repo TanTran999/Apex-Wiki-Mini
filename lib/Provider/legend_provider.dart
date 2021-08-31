@@ -7,18 +7,10 @@ final legendDatabase = Provider<LegendDatabase>((ref)=>LegendDatabase());
 // Get a list of legend from database
 final legendProvider = FutureProvider.autoDispose<List<Legend>>((ref) async {
 
-  await ref.read(legendDatabase).createDatabase();
+  await ref.read(legendDatabase).init();
   return ref.read(legendDatabase).legends();
 
 });
-
-// Get a specified legend by id from database
-
-// final getLegendById = StateNotifierProvider((ref)=>GetLegend());
-//
-// class GetLegend extends StateNotifier<int>{
-//   GetLegend():super(0);
-// }
 
 final getSpecifiedLegend = StateNotifierProvider((ref)=>AsyncLegend(ref.read));
 
@@ -40,3 +32,4 @@ class AsyncLegend extends StateNotifier<AsyncValue<Legend>>{
     state = AsyncData(legend);
   }
 }
+

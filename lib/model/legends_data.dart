@@ -9,7 +9,7 @@ final List<Legend> listLegend = [
     age: 38,
     height: 183,
     home: 'Gridiron',
-    path: 'assets/images/shion.png',
+    path: 'assets/images/bangalore.png',
   ),
   Legend(
     id: 1,
@@ -19,7 +19,7 @@ final List<Legend> listLegend = [
     age: null,
     height: null,
     home: 'Talos',
-    path: 'assets/images/shion.png',
+    path: 'assets/images/bloodhound.png',
   ),
   Legend(
     id: 2,
@@ -29,7 +29,7 @@ final List<Legend> listLegend = [
     age: 48,
     height: null,
     home: 'Gaea',
-    path: 'assets/images/shion.png',
+    path: 'assets/images/caustic.png',
   ),
   Legend(
     id: 3,
@@ -39,7 +39,7 @@ final List<Legend> listLegend = [
     age: 22,
     height: 175,
     home: 'Gaea',
-    path: 'assets/images/shion.png',
+    path: 'assets/images/crypto.png',
   ),
   Legend(
     id: 4,
@@ -49,7 +49,7 @@ final List<Legend> listLegend = [
     age: 54,
     height: null,
     home: 'Salvo',
-    path: 'assets/images/shion.png',
+    path: 'assets/images/fuse.png',
   ),
   Legend(
     id: 5,
@@ -59,7 +59,7 @@ final List<Legend> listLegend = [
     age: 30,
     height: 196,
     home: 'Solace',
-    path: 'assets/images/shion.png',
+    path: 'assets/images/gibratar.png',
   ),
   Legend(
     id: 6,
@@ -69,7 +69,7 @@ final List<Legend> listLegend = [
     age: 37,
     height: null,
     home: '	Psamathe',
-    path: 'assets/images/shion.png',
+    path: 'assets/images/horizon.png',
   ),
   Legend(
     id: 7,
@@ -79,7 +79,7 @@ final List<Legend> listLegend = [
     age: 24,
     height: null,
     home: 'Psamathe',
-    path: 'assets/images/shion.png',
+    path: 'assets/images/lifeline.png',
   ),
   Legend(
     id: 8,
@@ -89,7 +89,7 @@ final List<Legend> listLegend = [
     age: 34,
     height: 183,
     home: null,
-    path: 'assets/images/shion.png',
+    path: 'assets/images/loba.png',
   ),
   Legend(
     id: 9,
@@ -99,7 +99,7 @@ final List<Legend> listLegend = [
     age: 30,
     height: 180,
     home: 'Solace',
-    path: 'assets/images/shion.png',
+    path: 'assets/images/mirage.png',
   ),
   Legend(
     id: 10,
@@ -109,7 +109,7 @@ final List<Legend> listLegend = [
     age: 24,
     height: null,
     home: 'Psamathe',
-    path: 'assets/images/shion.png',
+    path: 'assets/images/octane.png',
   ),
   Legend(
     id: 11,
@@ -119,7 +119,7 @@ final List<Legend> listLegend = [
     age: 75,
     height: 188,
     home: 'Psamathe',
-    path: 'assets/images/shion.png',
+    path: 'assets/images/pathfinder.png',
   ),
   Legend(
     id: 12,
@@ -129,7 +129,7 @@ final List<Legend> listLegend = [
     age: 21,
     height: null,
     home: 'Gaea',
-    path: 'assets/images/shion.png',
+    path: 'assets/images/rampart.png',
   ),
   Legend(
     id: 13,
@@ -139,7 +139,7 @@ final List<Legend> listLegend = [
     age: 313,
     height: 203,
     home: 'Solace',
-    path: 'assets/images/shion.png',
+    path: 'assets/images/revenant.png',
   ),
   Legend(
     id: 14,
@@ -149,7 +149,7 @@ final List<Legend> listLegend = [
     age: 26,
     height: null,
     home: 'Boreas',
-    path: 'assets/images/shion.png',
+    path: 'assets/images/seer.png',
   ),
   Legend(
     id: 15,
@@ -159,7 +159,7 @@ final List<Legend> listLegend = [
     age: 30,
     height: null,
     home: 'Angelia',
-    path: 'assets/images/shion.png',
+    path: 'assets/images/valkyrie.png',
   ),
   Legend(
     id: 16,
@@ -169,7 +169,7 @@ final List<Legend> listLegend = [
     age: 22,
     height: 163,
     home: 'Solace',
-    path: 'assets/images/shion.png',
+    path: 'assets/images/watson.png',
   ),
   Legend(
     id: 17,
@@ -179,6 +179,6 @@ final List<Legend> listLegend = [
     age: 32,
     height: 163,
     home: 'Typhon',
-    path: 'assets/images/shion.png',
+    path: 'assets/images/wraith.png',
   ),
 ];
