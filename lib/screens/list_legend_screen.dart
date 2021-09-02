@@ -44,8 +44,8 @@ class ListLegendScreen extends StatelessWidget {
                       child: LegendCard(
                         onPress: () {
                           print(index);
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => DetailLegendScreen(index: index,)));
-                          //Navigator.push(context, CustomPageRoute(child: DetailLegend(index: index,)));
+                         // Navigator.push(context, MaterialPageRoute(builder: (context) => DetailLegendScreen(index: index,)));
+                          Navigator.push(context, CustomPageRoute(child: DetailLegendScreen(index: index)));
                         },
                         path: "${listLegend[index].path}",
                         name: "${listLegend[index].legendName}",

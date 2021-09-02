@@ -34,7 +34,7 @@ class CustomPageRoute extends PageRoute {
       Animation<double> secondaryAnimation) {
     return FadeTransition(
       opacity: animation,
-      child: map[name],
+      child: name != null ? map[name] : child,
     );
   }
 
